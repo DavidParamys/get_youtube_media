@@ -22,7 +22,7 @@ def getLogger(loggerName, is_verbose=True, is_save_file=True):
     if is_save_file:
         now_str = now.strftime('%Y%m%d_%H%M%S')
         log_url = os.path.join(os.path.join(LOG_DIR, '{loggerName}_{now_str}.log'))
-        file_handler = logging.handlers.TimedRotatingFileHandler(log_url, when="H", interval=1)
+        file_handler = logging.handlers.TimedRotatingFileHandler(log_url, when="H", interval=1, encoding="utf-8")
         file_handler.setLevel(target_level)        
         file_handler.setFormatter(formatter)
 
